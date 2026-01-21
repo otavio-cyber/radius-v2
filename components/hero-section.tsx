@@ -9,13 +9,7 @@ interface HeroSectionProps {
 }
 
 export function HeroSection({ onNavigate }: HeroSectionProps) {
-  const [animationComplete, setAnimationComplete] = useState(false)
   const [touchStartY, setTouchStartY] = useState<number | null>(null)
-
-  useEffect(() => {
-    const timer = setTimeout(() => setAnimationComplete(true), 2000)
-    return () => clearTimeout(timer)
-  }, [])
 
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStartY(e.touches[0].clientY)
@@ -50,24 +44,21 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/45 z-0" />
 
-      {/* Background animation */}
-      <BitcoinAnimation isComplete={animationComplete} />
-
-      {/* Content */}
+      {/* Hero content */}
       <motion.div
         initial={{ opacity: 0, y: 32 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 1 }}
         className="relative z-30 max-w-5xl mx-auto px-6 text-center"
       >
-        <h1 className="text-4xl md:text-7xl font-normal text-white leading-20 drop-shadow-xl">
+        <h1 className="text-4xl md:text-7xl font-normal text-white leading-tight drop-shadow-xl">
           Minerando Soluções,
           <br />
           Energizando o Futuro.
         </h1>
       </motion.div>
 
-      {/* Scroll indicator */}
+      {/* Scroll controller */}
       <motion.button
         initial={{ opacity: 0, y: -12 }}
         animate={{ opacity: 1, y: 0 }}
@@ -81,67 +72,5 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
         </svg>
       </motion.button>
     </section>
-  )
-}
-
-function BitcoinAnimation({ isComplete }: { isComplete: boolean }) {
-  return (
-    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-      <svg width="600" height="600" viewBox="0 0 300 300" className="opacity-40">
-        <motion.circle
-          cx="150"
-          cy="150"
-          r="40"
-          fill="none"
-          stroke="#8b1fa9"
-          strokeWidth="2"
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1 }}
-        />
-
-        {[...Array(8)].map((_, i) => {
-          const angle = (i / 8) * Math.PI * 2
-          const radius = 100
-          const x = 150 + Math.cos(angle) * radius
-          const y = 150 + Math.sin(angle) * radius
-
-          return (
-            <motion.circle
-              key={i}
-              cx={x}
-              cy={y}
-              r="6"
-              fill="#e91e63"
-              animate={{
-                scale: [0.6, 1, 0.6],
-                opacity: [0.4, 0.8, 0.4],
-              }}
-              transition={{
-                duration: 3,
-                delay: i * 0.2,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-          )
-        })}
-
-        <motion.text
-          x="150"
-          y="165"
-          fontSize="60"
-          fill="#fff"
-          textAnchor="middle"
-          fontFamily="Play, sans-serif"
-          fontWeight="bold"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: [0, 0.3, 0.15] }}
-          transition={{ duration: 2 }}
-        >
-          ₿
-        </motion.text>
-      </svg>
-    </div>
   )
 }

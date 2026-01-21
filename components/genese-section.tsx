@@ -30,61 +30,11 @@ export function GeneseSection({ onNavigate }: GeneseSectionProps) {
   return (
     <section
       id="genese"
-      className="w-full pt-24 pb-28 relative overflow-hidden"
-      style={{ backgroundColor: "#DBDBE0" }}
+      className="w-full pt-24 pb-28 relative overflow-hidden bg-[#dddddd]"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
-      {/* Decorative Elements - Inspired by logo pattern */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* Large central circle - subtle */}
-        <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 0.03 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full"
-          style={{ background: "radial-gradient(circle, #1e1b4b 0%, transparent 70%)" }}
-        />
-
-        {/* Orbiting dots - navy */}
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={`navy-${i}`}
-            initial={{ opacity: 0, scale: 0 }}
-            whileInView={{ opacity: 0.08, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: i * 0.1 }}
-            className="absolute rounded-full bg-[#1e1b4b]"
-            style={{
-              width: i % 2 === 0 ? "60px" : "40px",
-              height: i % 2 === 0 ? "60px" : "40px",
-              top: `${15 + i * 15}%`,
-              left: `${10 + (i % 3) * 30}%`,
-            }}
-          />
-        ))}
-
-        {/* Orbiting dots - purple */}
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={`purple-${i}`}
-            initial={{ opacity: 0, scale: 0 }}
-            whileInView={{ opacity: 0.06, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.15 + i * 0.1 }}
-            className="absolute rounded-full bg-[#8B3A9E]"
-            style={{
-              width: i % 2 === 0 ? "50px" : "35px",
-              height: i % 2 === 0 ? "50px" : "35px",
-              top: `${20 + i * 14}%`,
-              right: `${8 + (i % 3) * 28}%`,
-            }}
-          />
-        ))}
-      </div>
-
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-5xl mx-auto px-6 relative z-10">
         {/* QUEM SOMOS */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -92,58 +42,63 @@ export function GeneseSection({ onNavigate }: GeneseSectionProps) {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-normal tracking-tight text-[#1e1b4b] text-center mb-12">
-            Quem Somos
-          </h2>
+          {/* Title with gradient lines */}
+          <div className="text-center mb-16">
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: "120px" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="h-1.5 bg-gradient-to-r from-[#8b1fa9] via-[#e91e63] to-[#ff6b35] rounded-full mx-auto mb-6"
+            />
+            
+            <h2 className="text-4xl md:text-6xl font-normal tracking-tight text-[#1e1b4b] mb-6">
+              Quem Somos
+            </h2>
+            
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: "80px" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="h-1 bg-gradient-to-r from-[#ff6b35] to-[#e91e63] rounded-full mx-auto"
+            />
+          </div>
 
+          {/* Single Content Card */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-14 shadow-[0_20px_60px_rgba(30,27,75,0.12)] border border-white/60"
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="bg-[#1e1b4b] backdrop-blur-sm rounded-3xl p-10 md:p-14 border border-[#8b1fa9]/30"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-gray-700 leading-relaxed">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: 0.5 }}
-                className="space-y-4"
-              >
-                <p>
-                  A Radius Mining é uma empresa de desenvolvimento especializada na estruturação de projetos de mineração de Bitcoin,
-                  com foco na integração de três pilares estratégicos: energia, capital e operações.
-                </p>
+            <div className="space-y-7 text-white leading-relaxed text-lg">
+  <p>
+    A Radius Mining é uma empresa de desenvolvimento especializada na estruturação de projetos de mineração de Bitcoin, 
+    com foco na integração de três pilares estratégicos: <strong>energia</strong>, <strong>capital</strong> e <strong>operações</strong>.
+  </p>
 
-                <p>
-                  Identificamos e desenvolvemos oportunidades em que a disponibilidade de energia, especialmente proveniente de fontes
-                  renováveis, possa ser convertida em valor por meio da implantação de data centers modulares de mineração de criptoativos.
-                </p>
-              </motion.div>
+  <p>
+    Identificamos e desenvolvemos oportunidades em que a disponibilidade de energia, especialmente proveniente de 
+    <strong>fontes renováveis</strong>, possa ser convertida em valor por meio da implantação de 
+    data centers modulares de mineração de cripto ativos. Nossa atuação abrange desde a <strong>prospecção e negociação de energia</strong> 
+    até a <strong>estruturação financeira</strong> e as <strong>operações técnicas</strong>.
+  </p>
 
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: 0.6 }}
-                className="space-y-4"
-              >
-                <p>
-                  Nossa atuação abrange desde a prospecção e negociação de energia até a estruturação financeira e as operações técnicas.
-                  Com sede no Brasil, temos o compromisso de aproveitar o potencial energético renovável do país.
-                </p>
+  <p>
+    Com sede no Brasil, temos o compromisso de aproveitar o <strong>potencial energético renovável do país</strong> para 
+    construir operações de mineração <strong>sustentáveis</strong>, <strong>escaláveis</strong> e de <strong>alta performance</strong>.
+  </p>
 
-                <p>
-                  Acreditamos que o futuro da mineração de Bitcoin está na capacidade de conectar inteligência energética, engenharia de
-                  infraestrutura e estratégia de capital, entregando operações sustentáveis, escaláveis e de alta performance.
-                </p>
-
-                <p className="font-semibold text-[#F0672D] pt-2">
-                  Radius Mining – soluções em mineração, energizando o futuro.
-                </p>
-              </motion.div>
-            </div>
+  <p>
+    Acreditamos que o futuro da mineração de Bitcoin está na capacidade de conectar 
+    <strong>inteligência energética</strong>, 
+    <strong>engenharia de infraestrutura</strong> e 
+    <strong>estratégia de capital</strong>. 
+    Nossa missão é entregar <strong>projetos robustos</strong>, alinhando energia limpa a operações altamente eficientes.
+  </p>
+</div>
           </motion.div>
         </motion.div>
       </div>

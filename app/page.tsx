@@ -27,9 +27,9 @@ export default function Home() {
       {/* CONTEÚDO */}
       <main className="bg-[#DBDBE0]">
         <GeneseSection />
-        <MentesSection />
-        <SenecaSection />
         <ParaGeradoresSection />
+        <SenecaSection />
+        <MentesSection />
         <ContatoSection />
         <Footer />
       </main>

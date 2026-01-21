@@ -6,7 +6,7 @@ import Image from "next/image"
 
 export function SenecaSection() {
   const sectionRef = useRef<HTMLElement>(null)
-  
+
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"]
@@ -17,16 +17,17 @@ export function SenecaSection() {
   const quoteY = useTransform(scrollYProgress, [0, 1], [20, -20])
 
   return (
-    <section 
+    <section
       ref={sectionRef}
-      className="w-full relative overflow-hidden bg-gradient-to-br from-[#1e1b4b] via-[#2d2a5f] to-[#1e1b4b] flex items-center"
-      style={{ height: '66vh', minHeight: '500px' }}
+      className="w-full relative overflow-hidden bg-gradient-to-br from-[#1e1b4b] via-[#2d2a5f] to-[#1e1b4b] flex items-center h-[85vh] min-h-[600px] lg:h-[66vh] lg:min-h-[500px]"
+
     >
       {/* Container principal full width */}
-      <div className="w-full grid lg:grid-cols-2 h-full">
-        
+      <div className="w-full grid grid-rows-2 lg:grid-rows-1 lg:grid-cols-2 h-full">
+
+
         {/* COLUNA ESQUERDA - IMAGEM */}
-        <motion.div 
+        <motion.div
           style={{ y: imageY }}
           className="relative h-full"
         >
@@ -36,14 +37,14 @@ export function SenecaSection() {
               src="/images/seneca.webp"
               alt="Busto de Sêneca"
               fill
-              className="object-cover object-center"
+              className="object-cover object-[50%_15%] lg:object-center"
               sizes="(max-width: 1024px) 100vw, 50vw"
               priority
             />
-            
+
             {/* Gradient overlay para integração */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#1e1b4b]/30 via-transparent to-[#1e1b4b]/60" />
-            
+
             {/* Decorative element - linha vertical laranja */}
             <motion.div
               initial={{ scaleY: 0 }}
@@ -56,21 +57,11 @@ export function SenecaSection() {
         </motion.div>
 
         {/* COLUNA DIREITA - CITAÇÃO */}
-        <motion.div 
+        <motion.div
           style={{ y: quoteY }}
           className="relative flex items-center px-8 py-16 lg:px-16 lg:py-24"
         >
           <div className="max-w-2xl">
-            {/* Aspas decorativas */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 0.15, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-[120px] lg:text-[180px] font-serif text-[#ff6b35] leading-none -mb-8 lg:-mb-12"
-            >
-              "
-            </motion.div>
 
             {/* Linha decorativa superior */}
             <motion.div
@@ -106,18 +97,7 @@ export function SenecaSection() {
               </p>
             </motion.div>
 
-            {/* Decorative dots */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="absolute bottom-8 right-8 lg:bottom-12 lg:right-12 flex gap-2"
-            >
-              <div className="w-2 h-2 rounded-full bg-white opacity-20" />
-              <div className="w-2 h-2 rounded-full bg-[#ff6b35] opacity-40" />
-              <div className="w-2 h-2 rounded-full bg-[#e91e63] opacity-30" />
-            </motion.div>
+
           </div>
         </motion.div>
       </div>

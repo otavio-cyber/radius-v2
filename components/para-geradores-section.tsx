@@ -77,12 +77,8 @@ export function ParaGeradoresSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-normal text-[#1e1b4b] mb-6 font-['Play']">
-            Para Geradores de Energia
+            Serviços
           </h2>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Desenvolvemos projetos de mineração de Bitcoin que ajudam geradores 
-            a equilibrar suas redes e monetizar excedentes de energia.
-          </p>
         </motion.div>
 
         {/* SERVIÇOS - Grid 2x2 */}
@@ -138,9 +134,10 @@ export function ParaGeradoresSection() {
         >
           {/* Header da seção de benefícios */}
           <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-normal text-white mb-3 font-['Play']">
-              Benefícios Estratégicos
-            </h3>
+            <p className="text-xl md:text-2xl text-[#dddddd] max-w-3xl mx-auto leading-relaxed">
+            Desenvolvemos projetos de mineração de Bitcoin que ajudam geradores 
+            a equilibrar suas redes e monetizar excedentes de energia.
+          </p><br></br>
             <div className="w-20 h-1 bg-gradient-to-r from-[#ff6b35] to-[#e91e63] rounded-full mx-auto" />
           </div>
 
@@ -152,10 +149,11 @@ export function ParaGeradoresSection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                className="flex gap-6 items-start bg-white/5 rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300 group"
+                className="flex flex-col md:flex-row gap-4 md:gap-6 items-center md:items-start bg-white/5 rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300 group"
+
               >
                 {/* Ícone */}
-                <div className="relative w-14 h-14 flex-shrink-0">
+                <div className="relative w-14 h-14 flex-shrink-0 md:self-start">
                   <div className="absolute inset-0 bg-[#ff6b35]/20 rounded-xl group-hover:scale-110 transition-transform duration-300" />
                   <Image
                     src={benefit.icon}
@@ -167,7 +165,7 @@ export function ParaGeradoresSection() {
                 </div>
 
                 {/* Conteúdo */}
-                <div className="flex-1">
+                <div className="flex-1 text-center md:text-left">
                   <h4 className="text-lg md:text-xl font-medium text-white mb-2 leading-tight">
                     {benefit.title}
                   </h4>
@@ -191,11 +189,7 @@ export function ParaGeradoresSection() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-center mt-16"
         >
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Nossas soluções permitem que geradores de energia transformem desafios operacionais 
-            em oportunidades de receita, maximizando o retorno sobre ativos energéticos.
-          </p>
-        </motion.div>
+  </motion.div>
       </div>
     </section>
   )

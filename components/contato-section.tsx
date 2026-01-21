@@ -13,7 +13,7 @@ export function ContatoSection() {
           transition={{ duration: 0.6 }}
           className="text-3xl md:text-4xl font-bold text-[#8b1fa9] mb-4 font-['Play']"
         >
-Minerar com propósito é transformar energia em futuro.        </motion.h2>
+Contato        </motion.h2>
         <p className="text-gray-700 mb-8">
           Seja para discutir um novo projeto, explorar sinergias ou entender melhor como a mineração pode gerar
           eficiência energética, nosso time está pronto para conversar.
@@ -57,10 +57,7 @@ Minerar com propósito é transformar energia em futuro.        </motion.h2>
             Enviar mensagem
           </button>
         </motion.form>
-
-        <div className="mt-8 text-center text-gray-600">
-          <p>@radiusmining | linkedin.com/in/radius-mining | contato@radius.com</p>
-        </div>
+        
       </div>
     </section>
   )
