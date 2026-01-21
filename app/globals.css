@@ -117,6 +117,10 @@
 }
 
 @layer base {
+  section {
+  scroll-margin-top: 96px;
+}
+
   * {
     @apply border-border outline-ring/50;
   }

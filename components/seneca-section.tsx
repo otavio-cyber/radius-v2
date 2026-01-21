@@ -1,33 +1,139 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
+import { useRef } from "react"
+import Image from "next/image"
 
 export function SenecaSection() {
-  return (
-    <section className="py-16 px-4 bg-white">
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
-        >
-          <div
-            className="min-h-[300px] rounded-3xl shadow-[0_8px_30px_rgba(0,0,0,0.06)] bg-cover bg-center"
-            style={{
-              backgroundImage: `url('/images/seneca.png')`,
-            }}
-          />
+  const sectionRef = useRef<HTMLElement>(null)
+  
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  })
 
-          <div>
-            <blockquote className="text-2xl md:text-3xl font-medium text-[#1e1b4b] mb-4 leading-relaxed">
-              "Não é porque as coisas são difíceis que não ousamos; é porque não ousamos que elas são difíceis."
-            </blockquote>
-            <p className="text-gray-600">— Sêneca</p>
+  // Parallax muito sutil - movimento de 30px
+  const imageY = useTransform(scrollYProgress, [0, 1], [30, -30])
+  const quoteY = useTransform(scrollYProgress, [0, 1], [20, -20])
+
+  return (
+    <section 
+      ref={sectionRef}
+      className="w-full relative overflow-hidden bg-gradient-to-br from-[#1e1b4b] via-[#2d2a5f] to-[#1e1b4b] flex items-center"
+      style={{ height: '66vh', minHeight: '500px' }}
+    >
+      {/* Container principal full width */}
+      <div className="w-full grid lg:grid-cols-2 h-full">
+        
+        {/* COLUNA ESQUERDA - IMAGEM */}
+        <motion.div 
+          style={{ y: imageY }}
+          className="relative h-full"
+        >
+          {/* Imagem com overlay sutil */}
+          <div className="absolute inset-0">
+            <Image
+              src="/images/seneca.png"
+              alt="Busto de Sêneca"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority
+            />
+            
+            {/* Gradient overlay para integração */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#1e1b4b]/30 via-transparent to-[#1e1b4b]/60" />
+            
+            {/* Decorative element - linha vertical laranja */}
+            <motion.div
+              initial={{ scaleY: 0 }}
+              whileInView={{ scaleY: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="absolute right-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#ff6b35] via-[#e91e63] to-transparent origin-top"
+            />
           </div>
         </motion.div>
+
+        {/* COLUNA DIREITA - CITAÇÃO */}
+        <motion.div 
+          style={{ y: quoteY }}
+          className="relative flex items-center px-8 py-16 lg:px-16 lg:py-24"
+        >
+          <div className="max-w-2xl">
+            {/* Aspas decorativas */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 0.15, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-[120px] lg:text-[180px] font-serif text-[#ff6b35] leading-none -mb-8 lg:-mb-12"
+            >
+              "
+            </motion.div>
+
+            {/* Linha decorativa superior */}
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: "80px" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="h-1 bg-gradient-to-r from-[#ff6b35] to-[#e91e63] rounded-full mb-8"
+            />
+
+            {/* Citação */}
+            <motion.blockquote
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="text-2xl lg:text-3xl xl:text-4xl font-normal text-white mb-8 leading-tight font-['Play']"
+            >
+              Não é porque as coisas são difíceis que não ousamos; é porque não ousamos que elas são difíceis.
+            </motion.blockquote>
+
+            {/* Autor */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="flex items-center gap-4"
+            >
+              <div className="w-12 h-0.5 bg-white/30" />
+              <p className="text-lg lg:text-xl text-white/70 font-light">
+                Sêneca
+              </p>
+            </motion.div>
+
+            {/* Decorative dots */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="absolute bottom-8 right-8 lg:bottom-12 lg:right-12 flex gap-2"
+            >
+              <div className="w-2 h-2 rounded-full bg-white opacity-20" />
+              <div className="w-2 h-2 rounded-full bg-[#ff6b35] opacity-40" />
+              <div className="w-2 h-2 rounded-full bg-[#e91e63] opacity-30" />
+            </motion.div>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Background decorative element */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 0.03, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.2 }}
+          className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#8b1fa9]"
+        />
       </div>
     </section>
   )
 }
+
+export default SenecaSection

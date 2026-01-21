@@ -13,7 +13,7 @@ export function GlobalMenu({ onNavigate }: GlobalMenuProps) {
   const menuItems = [
     { label: "HOME", id: "home" },
     { label: "QUEM SOMOS", id: "genese" },
-    { label: "TIME RADIUS", id: "mentes" },
+    { label: "TIME", id: "mentes" },
     { label: "SERVIÇOS", id: "servicos" },
     { label: "CONTATO", id: "contato" },
   ]

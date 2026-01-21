@@ -4,87 +4,113 @@ import type React from "react"
 import { motion } from "framer-motion"
 import { useState } from "react"
 
-const pillars = [
-  {
-    title: "Missão",
-    description:
-      "Transformar energia disponível em valor sustentável por meio de engenharia, tecnologia e operações eficientes em mineração de Bitcoin.",
-  },
-  {
-    title: "Visão",
-    description:
-      "Ser referência em projetos de mineração integrados à energia limpa, entregando operações escaláveis e de alta performance.",
-  },
-  {
-    title: "Valores",
-    description:
-      "Eficiência energética, precisão técnica, transparência e compromisso com inovação sustentável.",
-  },
-]
-
 interface GeneseSectionProps {
-  onNavigate: (direction: "up") => void
+  onNavigate?: (direction: "up" | "down") => void
 }
 
 export function GeneseSection({ onNavigate }: GeneseSectionProps) {
-  const [touchStart, setTouchStart] = useState<{ y: number } | null>(null)
+  const [touchStartY, setTouchStartY] = useState<number | null>(null)
 
   const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStart({ y: e.touches[0].clientY })
+    setTouchStartY(e.touches[0].clientY)
   }
 
   const handleTouchEnd = (e: React.TouchEvent) => {
-    if (!touchStart) return
+    if (touchStartY === null || !onNavigate) return
 
-    const deltaY = e.changedTouches[0].clientY - touchStart.y
+    const deltaY = e.changedTouches[0].clientY - touchStartY
     const threshold = 50
 
     if (deltaY > threshold) onNavigate("up")
+    if (deltaY < -threshold) onNavigate("down")
 
-    setTouchStart(null)
+    setTouchStartY(null)
   }
 
   return (
     <section
       id="genese"
-      className="w-full pt-16 pb-28 relative"
+      className="w-full pt-24 pb-28 relative overflow-hidden"
       style={{ backgroundColor: "#DBDBE0" }}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
-      <div className="max-w-7xl mx-auto px-6">
+      {/* Decorative Elements - Inspired by logo pattern */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Large central circle - subtle */}
+        <motion.div
+          initial={{ scale: 0.8, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 0.03 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full"
+          style={{ background: "radial-gradient(circle, #1e1b4b 0%, transparent 70%)" }}
+        />
 
-        {/* CONTROLADOR UP */}
-        <div className="flex justify-center mb-6 pt-6">
-          <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+        {/* Orbiting dots - navy */}
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={`navy-${i}`}
+            initial={{ opacity: 0, scale: 0 }}
+            whileInView={{ opacity: 0.08, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            onClick={() => onNavigate("up")}
-            className="w-14 h-14 rounded-full bg-[#8b1fa9]/20 backdrop-blur-md border border-[#8b1fa9]/40 flex items-center justify-center text-[#8b1fa9] hover:bg-[#8b1fa9]/30 transition-all hover:scale-110"
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M18 15l-6-6-6 6" />
-            </svg>
-          </motion.button>
-        </div>
+            transition={{ duration: 0.8, delay: i * 0.1 }}
+            className="absolute rounded-full bg-[#1e1b4b]"
+            style={{
+              width: i % 2 === 0 ? "60px" : "40px",
+              height: i % 2 === 0 ? "60px" : "40px",
+              top: `${15 + i * 15}%`,
+              left: `${10 + (i % 3) * 30}%`,
+            }}
+          />
+        ))}
 
+        {/* Orbiting dots - purple */}
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={`purple-${i}`}
+            initial={{ opacity: 0, scale: 0 }}
+            whileInView={{ opacity: 0.06, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.15 + i * 0.1 }}
+            className="absolute rounded-full bg-[#8B3A9E]"
+            style={{
+              width: i % 2 === 0 ? "50px" : "35px",
+              height: i % 2 === 0 ? "50px" : "35px",
+              top: `${20 + i * 14}%`,
+              right: `${8 + (i % 3) * 28}%`,
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* QUEM SOMOS */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-24"
         >
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[#1e1b4b] font-['Play'] text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-normal tracking-tight text-[#1e1b4b] text-center mb-12">
             Quem Somos
           </h2>
 
-          <div className="bg-white/70 backdrop-blur rounded-3xl p-8 md:p-14 shadow-[0_12px_45px_rgba(0,0,0,0.08)]">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-14 shadow-[0_20px_60px_rgba(30,27,75,0.12)] border border-white/60"
+          >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-gray-700 leading-relaxed">
-              <div className="space-y-4">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.5 }}
+                className="space-y-4"
+              >
                 <p>
                   A Radius Mining é uma empresa de desenvolvimento especializada na estruturação de projetos de mineração de Bitcoin,
                   com foco na integração de três pilares estratégicos: energia, capital e operações.
@@ -94,9 +120,15 @@ export function GeneseSection({ onNavigate }: GeneseSectionProps) {
                   Identificamos e desenvolvemos oportunidades em que a disponibilidade de energia, especialmente proveniente de fontes
                   renováveis, possa ser convertida em valor por meio da implantação de data centers modulares de mineração de criptoativos.
                 </p>
-              </div>
+              </motion.div>
 
-              <div className="space-y-4">
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.6 }}
+                className="space-y-4"
+              >
                 <p>
                   Nossa atuação abrange desde a prospecção e negociação de energia até a estruturação financeira e as operações técnicas.
                   Com sede no Brasil, temos o compromisso de aproveitar o potencial energético renovável do país.
@@ -107,53 +139,16 @@ export function GeneseSection({ onNavigate }: GeneseSectionProps) {
                   infraestrutura e estratégia de capital, entregando operações sustentáveis, escaláveis e de alta performance.
                 </p>
 
-                <p className="font-semibold text-[#1e1b4b] pt-2">
+                <p className="font-semibold text-[#F0672D] pt-2">
                   Radius Mining – soluções em mineração, energizando o futuro.
                 </p>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
-
-        {/* HEADER GÊNESE */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[#1e1b4b] font-['Play']">
-            Gênese Radius Mining
-          </h2>
-          <p className="text-gray-700 max-w-2xl mx-auto mt-4">
-            A estrutura intelectual e operacional que fundamenta nossa atuação — energia, engenharia e capital em
-            sinergia contínua.
-          </p>
-        </motion.div>
-
-        {/* PILARES */}
-        <div className="grid md:grid-cols-3 gap-10">
-          {pillars.map((pillar, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="p-10 bg-white rounded-3xl shadow-[0_10px_35px_rgba(0,0,0,0.08)] border border-gray-200"
-            >
-              <h3 className="text-xl font-semibold mb-3 text-[#8b1fa9] font-['Play']">
-                {pillar.title}
-              </h3>
-              <p className="text-gray-700 leading-relaxed">
-                {pillar.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
-
       </div>
     </section>
   )
 }
+
+export default GeneseSection
