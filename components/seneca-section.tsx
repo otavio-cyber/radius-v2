@@ -33,7 +33,7 @@ export function SenecaSection() {
           {/* Imagem com overlay sutil */}
           <div className="absolute inset-0">
             <Image
-              src="/images/seneca.png"
+              src="/images/seneca.webp"
               alt="Busto de Sêneca"
               fill
               className="object-cover object-center"

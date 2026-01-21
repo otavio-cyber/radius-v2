@@ -41,7 +41,7 @@ export function HeroSection({ onNavigate }: HeroSectionProps) {
       onTouchEnd={handleTouchEnd}
       className="relative h-screen w-full flex items-center justify-center overflow-hidden"
       style={{
-        backgroundImage: `url('/images/banner-hero.jpg')`,
+        backgroundImage: `url('/images/banner-hero.webp')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "fixed",
