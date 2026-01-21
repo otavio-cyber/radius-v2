@@ -20,7 +20,7 @@ const services = [
     description: "Operação e manutenção especializada garantindo máxima eficiência, uptime operacional e performance técnica sustentada."
   },
   {
-    icon: "/images/icons/consultoria.png",
+    icon: "/images/icons/conexao.png",
     title: "Consultoria para Projetos de Mining",
     description: "Modelagem técnico-financeira, engenharia de sistemas e comissionamento completo de projetos de mineração.",
     highlight: "Modelagem, engenharia e comissionamento"
@@ -77,9 +77,12 @@ export function ParaGeradoresSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-normal text-[#1e1b4b] mb-6 font-['Play']">
-            Serviços
+            Para Geradores de Energia
           </h2>
-          
+          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Desenvolvemos projetos de mineração de Bitcoin que ajudam geradores 
+            a equilibrar suas redes e monetizar excedentes de energia.
+          </p>
         </motion.div>
 
         {/* SERVIÇOS - Grid 2x2 */}
@@ -188,7 +191,10 @@ export function ParaGeradoresSection() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="text-center mt-16"
         >
-          
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Nossas soluções permitem que geradores de energia transformem desafios operacionais 
+            em oportunidades de receita, maximizando o retorno sobre ativos energéticos.
+          </p>
         </motion.div>
       </div>
     </section>
