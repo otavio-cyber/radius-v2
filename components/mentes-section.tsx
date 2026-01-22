@@ -10,28 +10,28 @@ const team = [
     role: "Engenharia & Arquitetura Operacional",
     description:
       "Especialista em infraestrutura de datacenters e integração energética.",
-    image: "/images/flavio.jpg",
+    image: "/images/flavio.webp",
   },
   {
     name: "Cleoberto Wagner",
     role: "Energia & Estratégia Setorial",
     description:
       "Profundo conhecimento em geração e mercado de energia, com foco em contratos e viabilidade.",
-    image: "/images/cleoberto.jpg",
+    image: "/images/cleoberto.webp",
   },
   {
     name: "Leonardo Mideia",
     role: "Capital & Estruturação Financeira",
     description:
       "Estrutura modelos econômicos e estratégicos que sustentam projetos robustos.",
-    image: "/images/leonardo.jpg",
+    image: "/images/leonardo.webp",
   },
   {
     name: "Rodrigo Moreira",
     role: "Operações & Performance Técnica",
     description:
       "Especialista em O&M, garantindo eficiência, estabilidade térmica e continuidade operacional.",
-    image: "/images/rodrigo.jpg",
+    image: "/images/rodrigo.webp",
   },
 ]
 

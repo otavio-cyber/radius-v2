@@ -18,8 +18,14 @@ const palanquinFont = Palanquin({
 
 export const metadata: Metadata = {
   title: "Radius Mining - Minerando soluções, energizando o futuro",
-  description: "Empresa de tecnologia focada em mineração de Bitcoin com eficiência energética e impacto positivo",
+  description:
+    "Empresa de tecnologia focada em mineração de Bitcoin com eficiência energética e impacto positivo",
   generator: "v0.app",
+
+  icons: {
+    icon: "/favicon.png",
+    apple: "/apple-icon.png",
+  },
 }
 
 export default function RootLayout({

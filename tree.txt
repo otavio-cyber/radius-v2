@@ -10,12 +10,9 @@
 │   ├── global-menu.tsx
 │   ├── hero-section.tsx
 │   ├── mentes-section.tsx
-│   ├── minerar-proposito.tsx
 │   ├── navigation-arrows.tsx
-│   ├── numeros-section.tsx
 │   ├── para-geradores-section.tsx
 │   ├── seneca-section.tsx
-│   ├── stack-estrategica.tsx
 │   ├── theme-provider.tsx
 │   ├── transformamos-section.tsx
 │   └── ui
@@ -83,8 +80,77 @@
 ├── lib
 │   └── utils.ts
 ├── next.config.mjs
+├── next-env.d.ts
+├── node_modules
+│   ├── autoprefixer -> .pnpm/autoprefixer@10.4.23_postcss@8.5.6/node_modules/autoprefixer
+│   ├── class-variance-authority -> .pnpm/class-variance-authority@0.7.1/node_modules/class-variance-authority
+│   ├── clsx -> .pnpm/clsx@2.1.1/node_modules/clsx
+│   ├── cmdk -> .pnpm/cmdk@1.0.4_@types+react-dom@19.2.3_@types+react@19.2.8__@types+react@19.2.8_react-dom@19.2.0_react@19.2.0__react@19.2.0/node_modules/cmdk
+│   ├── date-fns -> .pnpm/date-fns@4.1.0/node_modules/date-fns
+│   ├── embla-carousel-react -> .pnpm/embla-carousel-react@8.5.1_react@19.2.0/node_modules/embla-carousel-react
+│   ├── @emotion
+│   │   └── is-prop-valid -> ../.pnpm/@emotion+is-prop-valid@1.4.0/node_modules/@emotion/is-prop-valid
+│   ├── framer-motion -> .pnpm/framer-motion@12.26.2_@emotion+is-prop-valid@1.4.0_react-dom@19.2.0_react@19.2.0__react@19.2.0/node_modules/framer-motion
+│   ├── @hookform
+│   │   └── resolvers -> ../.pnpm/@hookform+resolvers@3.10.0_react-hook-form@7.71.1_react@19.2.0_/node_modules/@hookform/resolvers
+│   ├── input-otp -> .pnpm/input-otp@1.4.1_react-dom@19.2.0_react@19.2.0__react@19.2.0/node_modules/input-otp
+│   ├── lucide-react -> .pnpm/lucide-react@0.454.0_react@19.2.0/node_modules/lucide-react
+│   ├── next -> .pnpm/next@16.0.10_react-dom@19.2.0_react@19.2.0__react@19.2.0/node_modules/next
+│   ├── next-themes -> .pnpm/next-themes@0.4.6_react-dom@19.2.0_react@19.2.0__react@19.2.0/node_modules/next-themes
+│   ├── postcss -> .pnpm/postcss@8.5.6/node_modules/postcss
+│   ├── @radix-ui
+│   │   ├── react-accordion -> ../.pnpm/@radix-ui+react-accordion@1.2.2_@types+react-dom@19.2.3_@types+react@19.2.8__@types+rea_d63ca18e467cd9f7f8fa5ea3b08d4d2e/node_modules/@radix-ui/react-accordion
+│   │   ├── react-alert-dialog -> ../.pnpm/@radix-ui+react-alert-dialog@1.1.4_@types+react-dom@19.2.3_@types+react@19.2.8__@types+_8151422325e71297c1244172edba468e/node_modules/@radix-ui/react-alert-dialog
+│   │   ├── react-aspect-ratio -> ../.pnpm/@radix-ui+react-aspect-ratio@1.1.1_@types+react-dom@19.2.3_@types+react@19.2.8__@types+_a16f89b642e9e3bd63d927133cb809e4/node_modules/@radix-ui/react-aspect-ratio
+│   │   ├── react-avatar -> ../.pnpm/@radix-ui+react-avatar@1.1.2_@types+react-dom@19.2.3_@types+react@19.2.8__@types+react@_3f58fbfbc4881d27130a04812abbf0b7/node_modules/@radix-ui/react-avatar
+│   │   ├── react-checkbox -> ../.pnpm/@radix-ui+react-checkbox@1.1.3_@types+react-dom@19.2.3_@types+react@19.2.8__@types+reac_724af99753ba5c33c3f30d22125a96a7/node_modules/@radix-ui/react-checkbox
+│   │   ├── react-collapsible -> ../.pnpm/@radix-ui+react-collapsible@1.1.2_@types+react-dom@19.2.3_@types+react@19.2.8__@types+r_2e8b97af516ef34e54c476ffb31043d6/node_modules/@radix-ui/react-collapsible
+│   │   ├── react-context-menu -> ../.pnpm/@radix-ui+react-context-menu@2.2.4_@types+react-dom@19.2.3_@types+react@19.2.8__@types+_1c71e491d7c43be77632b22726e0606e/node_modules/@radix-ui/react-context-menu
+│   │   ├── react-dialog -> ../.pnpm/@radix-ui+react-dialog@1.1.4_@types+react-dom@19.2.3_@types+react@19.2.8__@types+react@_40c7e8bd143205af04e879aabb959ca6/node_modules/@radix-ui/react-dialog
+│   │   ├── react-dropdown-menu -> ../.pnpm/@radix-ui+react-dropdown-menu@2.1.4_@types+react-dom@19.2.3_@types+react@19.2.8__@types_0107fd8ccfe7bc389b901fbb9857522d/node_modules/@radix-ui/react-dropdown-menu
+│   │   ├── react-hover-card -> ../.pnpm/@radix-ui+react-hover-card@1.1.4_@types+react-dom@19.2.3_@types+react@19.2.8__@types+re_6da9bf1d20408deb6e9df64390ea7afa/node_modules/@radix-ui/react-hover-card
+│   │   ├── react-label -> ../.pnpm/@radix-ui+react-label@2.1.1_@types+react-dom@19.2.3_@types+react@19.2.8__@types+react@1_4e46005bd98e0b2cf36ba7cc31fe968a/node_modules/@radix-ui/react-label
+│   │   ├── react-menubar -> ../.pnpm/@radix-ui+react-menubar@1.1.4_@types+react-dom@19.2.3_@types+react@19.2.8__@types+react_3d12b21dd586dcbddaf425a70cd9e63a/node_modules/@radix-ui/react-menubar
+│   │   ├── react-navigation-menu -> ../.pnpm/@radix-ui+react-navigation-menu@1.2.3_@types+react-dom@19.2.3_@types+react@19.2.8__@typ_45bc3e5e806d32f9adfb1a73bd7f5406/node_modules/@radix-ui/react-navigation-menu
+│   │   ├── react-popover -> ../.pnpm/@radix-ui+react-popover@1.1.4_@types+react-dom@19.2.3_@types+react@19.2.8__@types+react_b4f9988c571c740117371f51ee50b911/node_modules/@radix-ui/react-popover
+│   │   ├── react-progress -> ../.pnpm/@radix-ui+react-progress@1.1.1_@types+react-dom@19.2.3_@types+react@19.2.8__@types+reac_49752590f4141eecd30c542f955d4918/node_modules/@radix-ui/react-progress
+│   │   ├── react-radio-group -> ../.pnpm/@radix-ui+react-radio-group@1.2.2_@types+react-dom@19.2.3_@types+react@19.2.8__@types+r_bb2c502e1a1fa1b92f96f2b1db5dbfdc/node_modules/@radix-ui/react-radio-group
+│   │   ├── react-scroll-area -> ../.pnpm/@radix-ui+react-scroll-area@1.2.2_@types+react-dom@19.2.3_@types+react@19.2.8__@types+r_9fbd7da8887b25e6e89845c9b90ee48a/node_modules/@radix-ui/react-scroll-area
+│   │   ├── react-select -> ../.pnpm/@radix-ui+react-select@2.1.4_@types+react-dom@19.2.3_@types+react@19.2.8__@types+react@_40436275957f3f63110dd6db123295b0/node_modules/@radix-ui/react-select
+│   │   ├── react-separator -> ../.pnpm/@radix-ui+react-separator@1.1.1_@types+react-dom@19.2.3_@types+react@19.2.8__@types+rea_2ab40b5cb5a3016752f34f3c30b755d7/node_modules/@radix-ui/react-separator
+│   │   ├── react-slider -> ../.pnpm/@radix-ui+react-slider@1.2.2_@types+react-dom@19.2.3_@types+react@19.2.8__@types+react@_932374ebb5d548d26c6fc6dba7db5f37/node_modules/@radix-ui/react-slider
+│   │   ├── react-slot -> ../.pnpm/@radix-ui+react-slot@1.1.1_@types+react@19.2.8_react@19.2.0/node_modules/@radix-ui/react-slot
+│   │   ├── react-switch -> ../.pnpm/@radix-ui+react-switch@1.1.2_@types+react-dom@19.2.3_@types+react@19.2.8__@types+react@_4b6ab72c65fb68ce5a21d24e255fced1/node_modules/@radix-ui/react-switch
+│   │   ├── react-tabs -> ../.pnpm/@radix-ui+react-tabs@1.1.2_@types+react-dom@19.2.3_@types+react@19.2.8__@types+react@19_84ddd2fc54fb017c6c3912b7e3933825/node_modules/@radix-ui/react-tabs
+│   │   ├── react-toast -> ../.pnpm/@radix-ui+react-toast@1.2.4_@types+react-dom@19.2.3_@types+react@19.2.8__@types+react@1_1a425efc87046fc0166344ad8a1a29be/node_modules/@radix-ui/react-toast
+│   │   ├── react-toggle -> ../.pnpm/@radix-ui+react-toggle@1.1.1_@types+react-dom@19.2.3_@types+react@19.2.8__@types+react@_e992b575433550390b87bb3b21fdfab2/node_modules/@radix-ui/react-toggle
+│   │   ├── react-toggle-group -> ../.pnpm/@radix-ui+react-toggle-group@1.1.1_@types+react-dom@19.2.3_@types+react@19.2.8__@types+_edcf2db73a7f9608f28eaa87afa9bc55/node_modules/@radix-ui/react-toggle-group
+│   │   └── react-tooltip -> ../.pnpm/@radix-ui+react-tooltip@1.1.6_@types+react-dom@19.2.3_@types+react@19.2.8__@types+react_7031eac69030e9c3268da8a24e307409/node_modules/@radix-ui/react-tooltip
+│   ├── react -> .pnpm/react@19.2.0/node_modules/react
+│   ├── react-day-picker -> .pnpm/react-day-picker@9.8.0_react@19.2.0/node_modules/react-day-picker
+│   ├── react-dom -> .pnpm/react-dom@19.2.0_react@19.2.0/node_modules/react-dom
+│   ├── react-hook-form -> .pnpm/react-hook-form@7.71.1_react@19.2.0/node_modules/react-hook-form
+│   ├── react-resizable-panels -> .pnpm/react-resizable-panels@2.1.9_react-dom@19.2.0_react@19.2.0__react@19.2.0/node_modules/react-resizable-panels
+│   ├── recharts -> .pnpm/recharts@2.15.4_react-dom@19.2.0_react@19.2.0__react@19.2.0/node_modules/recharts
+│   ├── sonner -> .pnpm/sonner@1.7.4_react-dom@19.2.0_react@19.2.0__react@19.2.0/node_modules/sonner
+│   ├── @tailwindcss
+│   │   └── postcss -> ../.pnpm/@tailwindcss+postcss@4.1.18/node_modules/@tailwindcss/postcss
+│   ├── tailwindcss -> .pnpm/tailwindcss@4.1.18/node_modules/tailwindcss
+│   ├── tailwindcss-animate -> .pnpm/tailwindcss-animate@1.0.7_tailwindcss@4.1.18/node_modules/tailwindcss-animate
+│   ├── tailwind-merge -> .pnpm/tailwind-merge@3.4.0/node_modules/tailwind-merge
+│   ├── tw-animate-css -> .pnpm/tw-animate-css@1.3.3/node_modules/tw-animate-css
+│   ├── @types
+│   │   ├── node -> ../.pnpm/@types+node@22.19.6/node_modules/@types/node
+│   │   ├── react -> ../.pnpm/@types+react@19.2.8/node_modules/@types/react
+│   │   └── react-dom -> ../.pnpm/@types+react-dom@19.2.3_@types+react@19.2.8/node_modules/@types/react-dom
+│   ├── typescript -> .pnpm/typescript@5.9.3/node_modules/typescript
+│   ├── vaul -> .pnpm/vaul@1.1.2_@types+react-dom@19.2.3_@types+react@19.2.8__@types+react@19.2.8_react-dom@19.2.0_react@19.2.0__react@19.2.0/node_modules/vaul
+│   ├── @vercel
+│   │   └── analytics -> ../.pnpm/@vercel+analytics@1.3.1_next@16.0.10_react-dom@19.2.0_react@19.2.0__react@19.2.0__react@19.2.0/node_modules/@vercel/analytics
+│   └── zod -> .pnpm/zod@3.25.76/node_modules/zod
 ├── package.json
 ├── pnpm-lock.yaml
+├── pnpm-workspace.yaml
 ├── postcss.config.mjs
 ├── public
 │   ├── apple-icon.png
@@ -92,17 +158,33 @@
 │   ├── icon-light-32x32.png
 │   ├── icon.svg
 │   ├── images
-│   │   ├── banner-hero.jpg
+│   │   ├── banner-hero.webp
+│   │   ├── cleoberto.webp
+│   │   ├── flavio.webp
+│   │   ├── icons
+│   │   │   ├── bitcoin.png
+│   │   │   ├── conexao.png
+│   │   │   ├── energia.png
+│   │   │   ├── engrenagem.png
+│   │   │   ├── grafico-down.png
+│   │   │   ├── grafico-up.png
+│   │   │   └── operacoes.png
+│   │   ├── leonardo.webp
 │   │   ├── logo-radius.png
-│   │   └── seneca.png
+│   │   ├── placeholder-portrait-1.jpg
+│   │   ├── placeholder-portrait-2.jpg
+│   │   ├── placeholder-portrait-3.jpg
+│   │   ├── rodrigo.webp
+│   │   └── seneca.webp
 │   ├── placeholder.jpg
 │   ├── placeholder-logo.png
 │   ├── placeholder-logo.svg
 │   ├── placeholder.svg
 │   └── placeholder-user.jpg
+├── radius-mining-main.zip
 ├── styles
 │   └── globals.css
 ├── tree.txt
 └── tsconfig.json
 
-9 directories, 97 files
+77 directories, 111 files
