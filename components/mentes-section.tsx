@@ -9,7 +9,7 @@ const team = [
     name: "Flávio G. M. Hernandez",
     role: "Founding Partner & CEO",
     description:
-      "Experiência no setor de mining, com foco em estratégia, inovação e desenvolvimento de negócios escaláveis e altamente rentáveis.",
+      "Atuação de destaque no setor de mining ao invés de experiencia no setor de mining.",
     image: "/images/flavio.webp",
   },
   {
