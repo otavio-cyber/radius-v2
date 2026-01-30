@@ -12,9 +12,9 @@ export function Footer() {
           {/* COLUNA 1 - Brand */}
           <div className="flex flex-col items-center md:items-start md:pr-12">
             {/* Logo */}
-            <div className="bg-gray-400/50 backdrop-blur-sm rounded-xl px-6 py-0 max-w-sm">
+            <div className="mb-6">
               <Image
-                src="/images/logo-radius.png"
+                src="/images/logo-radius-bco.png"
                 alt="RADIUS MINING"
                 width={180}
                 height={60}

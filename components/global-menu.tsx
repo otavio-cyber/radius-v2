@@ -32,7 +32,7 @@ export function GlobalMenu({ onNavigate }: GlobalMenuProps) {
             {/* Logo */}
             <div className="flex items-center">
               <img
-                src="/images/logo-radius.png"
+                src="/images/LogoRadiusMining.png"
                 alt="RADIUS MINING"
                 className="h-[54px]"
                 style={{ transform: "scale(1.12)" }}
