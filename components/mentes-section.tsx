@@ -7,28 +7,28 @@ import Image from "next/image"
 const team = [
   {
     name: "Flávio G. M. Hernandez",
-    role: "Engenharia & Arquitetura Operacional",
+    role: "Founding Partner & CEO",
     description:
       "Especialista em infraestrutura de datacenters e integração energética.",
     image: "/images/flavio.webp",
   },
   {
     name: "Cleoberto Wagner",
-    role: "Energia & Estratégia Setorial",
+    role: "Diretor de O&M",
     description:
       "Profundo conhecimento em geração e mercado de energia, com foco em contratos e viabilidade.",
     image: "/images/cleoberto.webp",
   },
   {
     name: "Leonardo Mideia",
-    role: "Capital & Estruturação Financeira",
+    role: "Partner & Chairman",
     description:
       "Estrutura modelos econômicos e estratégicos que sustentam projetos robustos.",
     image: "/images/leonardo.webp",
   },
   {
     name: "Rodrigo Moreira",
-    role: "Operações & Performance Técnica",
+    role: "Partner & Board Member",
     description:
       "Especialista em O&M, garantindo eficiência, estabilidade térmica e continuidade operacional.",
     image: "/images/rodrigo.webp",
