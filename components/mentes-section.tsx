@@ -9,28 +9,28 @@ const team = [
     name: "Flávio G. M. Hernandez",
     role: "Founding Partner & CEO",
     description:
-      "Especialista em infraestrutura de datacenters e integração energética.",
+      "Experiência no setor de mining, com foco em estratégia, inovação e desenvolvimento de negócios escaláveis e altamente rentáveis.",
     image: "/images/flavio.webp",
   },
   {
     name: "Cleoberto Wagner",
     role: "Diretor de O&M",
     description:
-      "Profundo conhecimento em geração e mercado de energia, com foco em contratos e viabilidade.",
+      "Especialista em operação e manutenção de ativos de energia, com forte atuação em gestão de contratos, eficiência operacional e maximização de performance.",
     image: "/images/cleoberto.webp",
   },
   {
     name: "Leonardo Mideia",
     role: "Partner & Chairman",
     description:
-      "Estrutura modelos econômicos e estratégicos que sustentam projetos robustos.",
+      "Ampla experiência no mercado de comercialização de energia, com atuação na orientação estratégica da companhia e na geração de valor de longo prazo para acionistas e parceiros.",
     image: "/images/leonardo.webp",
   },
   {
     name: "Rodrigo Moreira",
     role: "Partner & Board Member",
     description:
-      "Especialista em O&M, garantindo eficiência, estabilidade térmica e continuidade operacional.",
+      "Trajetória consolidada na comercialização de energia, com destaque para aplicação de modelos estatísticos e abordagem analítica no suporte a decisões estratégicas.",
     image: "/images/rodrigo.webp",
   },
 ]

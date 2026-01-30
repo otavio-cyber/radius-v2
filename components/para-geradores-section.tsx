@@ -93,19 +93,37 @@ export function ParaGeradoresSection() {
               className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 border border-gray-200 hover:border-[#ff6b35]/30 hover:shadow-[0_8px_30px_rgba(255,107,53,0.12)] transition-all duration-300 group"
             >
               {/* Ícone */}
-              <div className="relative w-16 h-16 mb-5">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#ff6b35]/10 to-[#e91e63]/10 rounded-xl group-hover:scale-110 transition-transform duration-300" />
-                <Image
-                  src={service.icon}
-                  alt={service.title}
-                  width={64}
-                  height={64}
-                  className="relative z-10 w-full h-full object-contain p-2"
-                />
-              </div>
+              <div
+  className="
+    w-16 h-16 mb-5
+    flex items-center justify-center
+    rounded-xl
+    border border-[#1e1b4b]
+    bg-transparent
+    transition-all duration-300
+    group-hover:border-[#ff6b35]
+  "
+>
+  <Image
+    src={service.icon}
+    alt={service.title}
+    width={64}
+    height={64}
+    className="
+      w-full h-full object-contain p-2
+      transition-all duration-300
+      group-hover:scale-110
+      group-hover:brightness-0
+      group-hover:sepia
+      group-hover:saturate-[600%]
+      group-hover:hue-rotate-[8deg]
+    "
+  />
+</div>
+
 
               {/* Título */}
-              <h3 className="text-xl font-normal text-[#1e1b4b] mb-3 font-['Play'] leading-tight">
+              <h3 className="text-xl font-normal text-[# ] mb-3 font-['Play'] leading-tight">
                 {service.title}
               </h3>
 
