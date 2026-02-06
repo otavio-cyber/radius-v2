@@ -51,7 +51,7 @@ export function MentesSection() {
         />
         <motion.div
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 0.02 }}
+          whileInView={{ opacity: 0.00 }}
           viewport={{ once: true }}
           className="absolute bottom-20 left-10 w-96 h-96 rounded-full bg-[#1e1b4b]"
         />

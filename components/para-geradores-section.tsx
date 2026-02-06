@@ -55,7 +55,7 @@ export function ParaGeradoresSection() {
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 0.02 }}
+          whileInView={{ opacity: 0.00 }}
           viewport={{ once: true }}
           className="absolute top-40 left-10 w-96 h-96 rounded-full bg-[#1e1b4b]"
         />
